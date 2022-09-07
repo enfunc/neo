@@ -151,7 +151,8 @@ func (a *API) do(req *http.Request, status int, v interface{}) (*SCAHandler, err
 		}
 		a.Token = t
 		return a.do(req.Clone(c), status, v)
-	case 510, 520, 530: // See https://docs.neonomics.io/documentation/development/error-handling.
+	case 510, 520, 530: //nolint:usestdlibvars
+		// See https://docs.neonomics.io/documentation/development/error-handling.
 		e := &Error{}
 		if err := json.NewDecoder(resp.Body).Decode(e); err != nil {
 			return nil, fmt.Errorf("neo: failed to decode neo.Error: %w", err)

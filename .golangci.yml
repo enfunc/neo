@@ -13,6 +13,7 @@ linters:
     - gochecknoglobals
     - nlreturn
     - nilnil
+    - contextcheck
 
 linters-settings:
   maligned:
