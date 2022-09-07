@@ -32,7 +32,7 @@ func (c *Client) auth(ctx context.Context, body url.Values) (*Token, error) {
 		return nil, fmt.Errorf("neo: failed to create a new http.Request: %w", err)
 	}
 	req.Header.Set("content-type", ContentTypeFormURLEncoded)
-	resp, err := c.doer.Do(req)
+	resp, err := c.doer.Do(req) //nolint:bodyclose
 	if err != nil {
 		return nil, fmt.Errorf("neo: invalid auth request: %w", err)
 	}

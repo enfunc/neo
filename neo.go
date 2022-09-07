@@ -70,7 +70,7 @@ var (
 
 // Optional provides means to adjust the request sent to the server.
 // In most cases, you should use one of the provided helpers:
-// 	SessionID, RedirectURL, PsuID, PsuIP, DeviceID.
+// SessionID, RedirectURL, PsuID, PsuIP, DeviceID.
 type Optional func(*http.Request)
 
 // SessionID appends a session ID header to the request.
@@ -130,7 +130,7 @@ func (a *API) request(ctx context.Context, method, url string, body io.Reader, o
 }
 
 func (a *API) do(req *http.Request, status int, v interface{}) (*SCAHandler, error) { //nolint:cyclop
-	resp, err := a.Client.doer.Do(req)
+	resp, err := a.Client.doer.Do(req) //nolint:bodyclose
 	if err != nil {
 		return nil, fmt.Errorf("%s err: %w", req.URL.String(), err)
 	}

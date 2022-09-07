@@ -42,8 +42,8 @@ func DefaultSCAMapper(d Doer, r *http.Request, e *Error) (*SCA, error) { //nolin
 	if err != nil {
 		return nil, fmt.Errorf("neo: failed to create a new http.Request: %w", err)
 	}
-	req.Header = r.Header // Copy request headers.
-	resp, err := d.Do(req)
+	req.Header = r.Header  // Copy request headers.
+	resp, err := d.Do(req) //nolint:bodyclose
 	if err != nil {
 		return nil, fmt.Errorf("neo: failed to retrieve a SCA response: %w", err)
 	}
