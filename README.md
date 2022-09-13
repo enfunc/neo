@@ -1,4 +1,5 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/enfunc/neo.svg)](https://pkg.go.dev/github.com/enfunc/neo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/enfunc/neo)](https://goreportcard.com/report/github.com/enfunc/neo)
 
 # Neo
 
