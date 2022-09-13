@@ -57,7 +57,7 @@ func (c *Client) API(ctx context.Context, deviceID string) (*API, error) {
 	}, nil
 }
 
-var (
+const (
 	ContentTypeFormURLEncoded = "application/x-www-form-urlencoded"
 	ContentTypeJSON           = "application/json"
 
